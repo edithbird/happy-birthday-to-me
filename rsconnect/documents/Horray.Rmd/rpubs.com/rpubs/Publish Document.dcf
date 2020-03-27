@@ -1,0 +1,10 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/590299/00bc6b0b060b40b09af7a0eafe45c95f
+bundleId: https://api.rpubs.com/api/v1/document/590299/00bc6b0b060b40b09af7a0eafe45c95f
+url: http://rpubs.com/chrisiyer/590299
+when: 1585282292.60552

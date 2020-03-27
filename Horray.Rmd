@@ -1,0 +1,109 @@
+---
+title: <span style="color:#3d7d7a">Horray! And Happy Birthday to Me!</span>    
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+	echo = FALSE,
+	message = FALSE,
+	warning = FALSE
+)
+```
+
+```{r}
+library(plotly)
+library(datasets)
+library(ggplot2)
+library(viridis)
+```
+
+
+
+###  <span style="color:orange">You are invited to Chris Iyer's Birthday Party</span> tonight, Friday, March 27, 6:30 - 7:10. Tap this [Zoom link](https://us04web.zoom.us/j/385532448) to pop into the festivities at 6:30 sharp. We only have 40 minutes. 
+
+```{r fig.height=1.5, fig.width=10}
+library(randomcoloR)
+library(wesanderson)
+library(ggrepel)
+library(png)
+n <- nrow(iris)
+palette <- wes_palette("Royal2", n, type = "continuous")
+
+#palette <- viridis_pal(option = "A")(n)  # n = number of colors seeked
+#palette <- unname(distinctColorPalette(n, runTsne = TRUE))
+
+
+
+p <- iris %>% 
+  ggplot(aes(x=Sepal.Length,
+             y=Sepal.Width,
+             label = "",
+             color = palette)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_color_manual(values=palette) +
+  theme_void() + theme(legend.position = "none") + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank())+
+  theme(line = element_blank(),
+        text = element_blank(),
+        title = element_blank())
+
+
+
+(r <-
+    p + geom_point(
+      aes(size = Petal.Length*Petal.Width),
+      pch = 21,
+      show.legend = FALSE,
+      fill = palette
+    ) +
+    scale_size_continuous(range = c(4, 18)) +
+    geom_text_repel(segment.color = "orange",
+                    nudge_y = 0.05,
+                    angle        = 0,
+                    vjust        = -5,
+                    segment.size = 0.2) +
+    theme(legend.position = "none")
+)
+
+```
+
+
+### I'll be throwing aside my surgical mask and celebrating with Kai's <span style="color:orange">mocktails/mixers</span>, available at Luke's pierside pickup. <span style="color:#ad565a">(Tropical Daiquiri to go with my pineapple coconut birthday cake.)</span>
+
+### No babysitter? No excuse. <span style="color:orange">Kids, pets, and peanuts welcome.</span>
+
+### RSVPs unnecessary, <span style="color:#80c3c4">you have nothing better to do.</span>
+
+
+```{r faehigkeit, echo=FALSE, out.width = '10%', out.extra="style='transform:rotate(25deg);'"}
+knitr::include_graphics("C:/Users/christine.iyer/Downloads/honey.png")
+knitr::include_graphics("C:/Users/christine.iyer/Downloads/honeyback.png")
+knitr::include_graphics("C:/Users/christine.iyer/Downloads/Daq.png")
+
+knitr::include_graphics("C:/Users/christine.iyer/Downloads/IMG_2111.jpg")
+```
+
+
+
+```{r fig.height=2, fig.width=10}
+
+(r <-
+    p + geom_point(
+      aes(size = Petal.Length*Petal.Width),
+      pch = 21,
+      show.legend = FALSE,
+      fill = palette
+    ) +
+    scale_size_continuous(range = c(4, 18)) +
+    geom_text_repel(segment.color = "orange",
+                    nudge_y = 0.05,
+                    angle        = 0,
+                    vjust        = -5,
+                    segment.size = 0.2) +
+    theme(legend.position = "none")
+)
+
+```
+
